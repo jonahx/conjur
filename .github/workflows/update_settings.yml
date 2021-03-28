@@ -16,7 +16,7 @@ jobs:
 
       - name: Submodule update --remote
         run: |
-          git submodule update --remote
+          git submodule update --force --remote
 
       - name: Apply current settings
         run: |
