@@ -4,6 +4,10 @@ on:
   schedule:
     - cron:  '*/5 * * * *'
 
+steps:
+- name: Checkout repository
+  uses: actions/checkout@v2
+
 jobs:
   settings_update:
     runs-on: ubuntu-latest
@@ -14,10 +18,15 @@ jobs:
         # with:
         #   submodules: true
 
-      - name: Submodule update --remote
-        run: |
-          # /usr/bin/git -c protocol.version=2 submodule update --force --remote
-          git submodule update --init --remote
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
+        with:
+          remote: true
+
+      # - name: Submodule update --remote
+      #   run: |
+      #     # /usr/bin/git -c protocol.version=2 submodule update --force --remote
+      #     git submodule update --init --remote
 
       - name: Apply current settings
         run: |
