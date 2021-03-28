@@ -11,12 +11,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          submodules: true
+        # with:
+        #   submodules: true
 
       - name: Submodule update --remote
         run: |
-          /usr/bin/git -c protocol.version=2 submodule update --force --remote
+          # /usr/bin/git -c protocol.version=2 submodule update --force --remote
+          git submodule update --init --remote
 
       - name: Apply current settings
         run: |
