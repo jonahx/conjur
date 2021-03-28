@@ -16,7 +16,7 @@ jobs:
 
       - name: Submodule update --remote
         run: |
-          git submodule update --force --remote
+          /usr/bin/git -c protocol.version=2 submodule update --force --remote
 
       - name: Apply current settings
         run: |
