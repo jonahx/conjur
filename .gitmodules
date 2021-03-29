@@ -1,4 +1,5 @@
 [submodule "conjur-project-config"]
 	path = conjur-project-config
-	url = git@github.com:cyberark/conjur-project-config.git
+  # git@github.com:cyberark/conjur-project-config.git
+	url = https://github.com/cyberark/conjur-project-config.git
 	branch = test-updates
