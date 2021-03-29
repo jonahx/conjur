@@ -17,6 +17,7 @@ jobs:
       - name: Checkout submodules
         uses: textbook/git-checkout-submodule-action@master
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           remote: true
 
       # - name: Submodule update --remote
