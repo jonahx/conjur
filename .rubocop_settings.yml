@@ -1,5 +1,6 @@
 AllCops:
   TargetRubyVersion: 2.5
+# Try one more
 
 # These non-default settings best reflect our current code style.
 Layout/LineLength:
