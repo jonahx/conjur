@@ -1,6 +1,7 @@
 name: Keep Settings Up To Date
 on:
-  schedule:
+  - push:
+  - schedule:
     - cron:  '*/5 * * * *'
 
 jobs:
