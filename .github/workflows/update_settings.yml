@@ -1,6 +1,5 @@
 name: Keep Settings Up To Date
 on:
-  push:
   schedule:
     - cron:  '*/5 * * * *'
 
@@ -11,19 +10,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        # with:
-        #   submodules: true
 
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@master
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          remote: true
-
-      # - name: Submodule update --remote
-      #   run: |
-      #     # /usr/bin/git -c protocol.version=2 submodule update --force --remote
-      #     git submodule update --init --remote
+      - name: Submodule update --remote
+        run: |
+          git submodule update --init --remote --recursive
 
       - name: Apply current settings
         run: |
@@ -42,4 +32,3 @@ jobs:
 
             Please verify that the changes look good and merge this PR to keep
             its settings up to date with Conjur's current best practices.
-

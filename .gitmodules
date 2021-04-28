@@ -2,4 +2,4 @@
 	path = conjur-project-config
   # git@github.com:cyberark/conjur-project-config.git
 	url = https://github.com/cyberark/conjur-project-config.git
-	branch = test-updates
+	branch = 5-single-update-script
